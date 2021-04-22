@@ -1,0 +1,42 @@
+### Implementing the Joint Modeling Method
+
+We will demonstrate the implementation of this method using the same dataset \code{example_long_surv}. Again we will use the function \code{est_pattern_long_surv} to estimate the longitudinal pattern and the relationship between longitudinal and survival data by specifying \code{method="joint"}.
+```{r}
+ntimepoints<-example_long_surv$ntimepoints
+nind<-dim(example_long_surv$yyijk)[1]
+pattern_joint<-est_pattern_long_surv(
+  example_long_surv$yyijk,
+  example_long_surv$ttij,
+  example_long_surv$nobs,
+  example_long_surv$starttime,
+  example_long_surv$survtime,
+  example_long_surv$survevent,
+  ttmin=1,ttmax=ntimepoints,ntimepoints=ntimepoints,
+  method="joint",smoothing="local quadratic",
+  hh=50)
+```
+Then we monitor those subjects by the estimated pattern and evaluate the methods.
+```{r}
+chart_joint<-mnt_long_surv(
+  example_long_surv$yyijk,
+  example_long_surv$ttij,
+  example_long_surv$nobs,
+  pattern=pattern_joint,method="joint",
+  parameter=0.2,CL=Inf)
+eva_output_joint<-eva_control_chart_one(
+  chart_joint$chart,
+  example_long_surv$ttij,
+  example_long_surv$nobs,
+  starttime=rep(1,nind),
+  endtime=rep(ntimepoints,nind),
+  event=example_long_surv$survevent,
+  ttmin=1,ttmax=ntimepoints,
+  ntimepoints=ntimepoints)
+```
+
+```{r,fig.width=7}
+plot(eva_output_joint)
+```
+```{r}
+plot_PMROC(eva_output_joint)
+```

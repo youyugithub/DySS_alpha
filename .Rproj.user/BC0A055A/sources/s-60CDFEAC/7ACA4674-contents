@@ -1,0 +1,5 @@
+DD<-matrix(0,5,5)
+DD<-abs(row(DD)-col(DD))
+JJ<-diag(5)-matrix(1,5,5)/5
+
+eigen(-JJ%*%DD%*%JJ)

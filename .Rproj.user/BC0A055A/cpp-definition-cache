@@ -1,0 +1,539 @@
+[
+    {
+        "definitions" : [
+            {
+                "column" : 8,
+                "file" : "/Users/luyou/Dropbox/clean_folder/DySS/src/cpp_add_search_control_limit.cpp",
+                "kind" : 6,
+                "line" : 4,
+                "name" : "add_search_control_limit_omit(NumericMatrix, IntegerMatrix, IntegerVector, NumericVector, double, double, double, double, double, double)",
+                "parent_name" : "",
+                "usr" : "c:@F@add_search_control_limit_omit#$@N@Rcpp@S@Matrix>#VI14#@N@Rcpp@ST>1#T@PreserveStorage#$@N@Rcpp@S@Matrix>#VI13#@N@Rcpp@ST>1#T@PreserveStorage#$@N@Rcpp@S@Vector>#VI13#@N@Rcpp@ST>1#T@PreserveStorage#$@N@Rcpp@S@Vector>#VI14#@N@Rcpp@ST>1#T@PreserveStorage#d#d#d#d#d#d#"
+            },
+            {
+                "column" : 8,
+                "file" : "/Users/luyou/Dropbox/clean_folder/DySS/src/cpp_add_search_control_limit.cpp",
+                "kind" : 6,
+                "line" : 46,
+                "name" : "add_search_control_limit_impute(NumericMatrix, IntegerMatrix, IntegerVector, NumericVector, double, double, double, double, double, double)",
+                "parent_name" : "",
+                "usr" : "c:@F@add_search_control_limit_impute#$@N@Rcpp@S@Matrix>#VI14#@N@Rcpp@ST>1#T@PreserveStorage#$@N@Rcpp@S@Matrix>#VI13#@N@Rcpp@ST>1#T@PreserveStorage#$@N@Rcpp@S@Vector>#VI13#@N@Rcpp@ST>1#T@PreserveStorage#$@N@Rcpp@S@Vector>#VI14#@N@Rcpp@ST>1#T@PreserveStorage#d#d#d#d#d#d#"
+            }
+        ],
+        "file" : "/Users/luyou/Dropbox/clean_folder/DySS/src/cpp_add_search_control_limit.cpp",
+        "file_last_write" : 1596921112.000000
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 6,
+                "file" : "/Users/luyou/Dropbox/clean_folder/DySS/src/cpp_chart_CUSUM_univariate_dec.cpp",
+                "kind" : 6,
+                "line" : 6,
+                "name" : "chart_CUSUM_univariate_dec(arma::mat, arma::umat, arma::uvec, arma::mat, const double, const double)",
+                "parent_name" : "",
+                "usr" : "c:@F@chart_CUSUM_univariate_dec#$@N@arma@S@Mat>#d#$@N@arma@S@Mat>#i#$@N@arma@S@Col>#i#S0_#1d#1d#"
+            }
+        ],
+        "file" : "/Users/luyou/Dropbox/clean_folder/DySS/src/cpp_chart_CUSUM_univariate_dec.cpp",
+        "file_last_write" : 1596477209.000000
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 6,
+                "file" : "/Users/luyou/Dropbox/clean_folder/DySS/src/cpp_chart_CUSUM_univariate_sprint.cpp",
+                "kind" : 6,
+                "line" : 6,
+                "name" : "chart_CUSUM_univariate_sprint(arma::mat, arma::umat, arma::uvec, arma::mat, const double, const double)",
+                "parent_name" : "",
+                "usr" : "c:@F@chart_CUSUM_univariate_sprint#$@N@arma@S@Mat>#d#$@N@arma@S@Mat>#i#$@N@arma@S@Col>#i#S0_#1d#1d#"
+            }
+        ],
+        "file" : "/Users/luyou/Dropbox/clean_folder/DySS/src/cpp_chart_CUSUM_univariate_sprint.cpp",
+        "file_last_write" : 1596481989.000000
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 15,
+                "file" : "/Users/luyou/Dropbox/clean_folder/DySS/src/cpp_chart_CUSUM_univariate_std.cpp",
+                "kind" : 6,
+                "line" : 5,
+                "name" : "chart_CUSUM_univariate_std(NumericMatrix, IntegerMatrix, IntegerVector, const double, const double)",
+                "parent_name" : "",
+                "usr" : "c:@F@chart_CUSUM_univariate_std#$@N@Rcpp@S@Matrix>#VI14#@N@Rcpp@ST>1#T@PreserveStorage#$@N@Rcpp@S@Matrix>#VI13#@N@Rcpp@ST>1#T@PreserveStorage#$@N@Rcpp@S@Vector>#VI13#@N@Rcpp@ST>1#T@PreserveStorage#1d#1d#"
+            }
+        ],
+        "file" : "/Users/luyou/Dropbox/clean_folder/DySS/src/cpp_chart_CUSUM_univariate_std.cpp",
+        "file_last_write" : 1594864414.000000
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 6,
+                "file" : "/Users/luyou/Dropbox/clean_folder/DySS/src/cpp_chart_EWMA_univariate_dec.cpp",
+                "kind" : 6,
+                "line" : 6,
+                "name" : "chart_EWMA_univariate_dec(arma::mat, arma::umat, arma::uvec, arma::mat, const double, const double)",
+                "parent_name" : "",
+                "usr" : "c:@F@chart_EWMA_univariate_dec#$@N@arma@S@Mat>#d#$@N@arma@S@Mat>#i#$@N@arma@S@Col>#i#S0_#1d#1d#"
+            }
+        ],
+        "file" : "/Users/luyou/Dropbox/clean_folder/DySS/src/cpp_chart_EWMA_univariate_dec.cpp",
+        "file_last_write" : 1596481968.000000
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 6,
+                "file" : "/Users/luyou/Dropbox/clean_folder/DySS/src/cpp_chart_EWMA_univariate_sprint.cpp",
+                "kind" : 6,
+                "line" : 6,
+                "name" : "chart_EWMA_univariate_sprint(arma::mat, arma::umat, arma::uvec, arma::mat, const double, const double)",
+                "parent_name" : "",
+                "usr" : "c:@F@chart_EWMA_univariate_sprint#$@N@arma@S@Mat>#d#$@N@arma@S@Mat>#i#$@N@arma@S@Col>#i#S0_#1d#1d#"
+            }
+        ],
+        "file" : "/Users/luyou/Dropbox/clean_folder/DySS/src/cpp_chart_EWMA_univariate_sprint.cpp",
+        "file_last_write" : 1596482007.000000
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 15,
+                "file" : "/Users/luyou/Dropbox/clean_folder/DySS/src/cpp_chart_EWMA_univariate_std.cpp",
+                "kind" : 6,
+                "line" : 6,
+                "name" : "chart_EWMA_univariate_std(NumericMatrix, IntegerMatrix, IntegerVector, const double, const double)",
+                "parent_name" : "",
+                "usr" : "c:@F@chart_EWMA_univariate_std#$@N@Rcpp@S@Matrix>#VI14#@N@Rcpp@ST>1#T@PreserveStorage#$@N@Rcpp@S@Matrix>#VI13#@N@Rcpp@ST>1#T@PreserveStorage#$@N@Rcpp@S@Vector>#VI13#@N@Rcpp@ST>1#T@PreserveStorage#1d#1d#"
+            }
+        ],
+        "file" : "/Users/luyou/Dropbox/clean_folder/DySS/src/cpp_chart_EWMA_univariate_std.cpp",
+        "file_last_write" : 1594864366.000000
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 6,
+                "file" : "/Users/luyou/Dropbox/clean_folder/DySS/src/cpp_chart_joint.cpp",
+                "kind" : 6,
+                "line" : 5,
+                "name" : "chart_joint(arma::cube, arma::icube, arma::imat, int, arma::imat, arma::ivec, arma::mat, arma::cube, arma::mat, double, double, int, int)",
+                "parent_name" : "",
+                "usr" : "c:@F@chart_joint#$@N@arma@S@Cube>#d#$@N@arma@S@Cube>#I#$@N@arma@S@Mat>#I#I#S2_#$@N@arma@S@Col>#I#$@N@arma@S@Mat>#d#S0_#S4_#d#d#I#I#"
+            }
+        ],
+        "file" : "/Users/luyou/Dropbox/clean_folder/DySS/src/cpp_chart_joint.cpp",
+        "file_last_write" : 1597784500.000000
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 15,
+                "file" : "/Users/luyou/Dropbox/clean_folder/DySS/src/cpp_chart_risk.cpp",
+                "kind" : 6,
+                "line" : 6,
+                "name" : "chart_risk(NumericMatrix, IntegerMatrix, IntegerVector, const double, const double, const double)",
+                "parent_name" : "",
+                "usr" : "c:@F@chart_risk#$@N@Rcpp@S@Matrix>#VI14#@N@Rcpp@ST>1#T@PreserveStorage#$@N@Rcpp@S@Matrix>#VI13#@N@Rcpp@ST>1#T@PreserveStorage#$@N@Rcpp@S@Vector>#VI13#@N@Rcpp@ST>1#T@PreserveStorage#1d#1d#1d#"
+            }
+        ],
+        "file" : "/Users/luyou/Dropbox/clean_folder/DySS/src/cpp_chart_risk.cpp",
+        "file_last_write" : 1596383316.000000
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 8,
+                "file" : "/Users/luyou/Dropbox/clean_folder/DySS/src/cpp_eva_calculate_ATS.cpp",
+                "kind" : 6,
+                "line" : 4,
+                "name" : "eva_calculate_ATS_omit(NumericMatrix, IntegerMatrix, IntegerVector, NumericVector, double)",
+                "parent_name" : "",
+                "usr" : "c:@F@eva_calculate_ATS_omit#$@N@Rcpp@S@Matrix>#VI14#@N@Rcpp@ST>1#T@PreserveStorage#$@N@Rcpp@S@Matrix>#VI13#@N@Rcpp@ST>1#T@PreserveStorage#$@N@Rcpp@S@Vector>#VI13#@N@Rcpp@ST>1#T@PreserveStorage#$@N@Rcpp@S@Vector>#VI14#@N@Rcpp@ST>1#T@PreserveStorage#d#"
+            },
+            {
+                "column" : 8,
+                "file" : "/Users/luyou/Dropbox/clean_folder/DySS/src/cpp_eva_calculate_ATS.cpp",
+                "kind" : 6,
+                "line" : 31,
+                "name" : "eva_calculate_ATS_impute(NumericMatrix, IntegerMatrix, IntegerVector, NumericVector, double)",
+                "parent_name" : "",
+                "usr" : "c:@F@eva_calculate_ATS_impute#$@N@Rcpp@S@Matrix>#VI14#@N@Rcpp@ST>1#T@PreserveStorage#$@N@Rcpp@S@Matrix>#VI13#@N@Rcpp@ST>1#T@PreserveStorage#$@N@Rcpp@S@Vector>#VI13#@N@Rcpp@ST>1#T@PreserveStorage#$@N@Rcpp@S@Vector>#VI14#@N@Rcpp@ST>1#T@PreserveStorage#d#"
+            }
+        ],
+        "file" : "/Users/luyou/Dropbox/clean_folder/DySS/src/cpp_eva_calculate_ATS.cpp",
+        "file_last_write" : 1597372251.000000
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 6,
+                "file" : "/Users/luyou/Dropbox/clean_folder/DySS/src/cpp_eva_calculate_signal_times.cpp",
+                "kind" : 6,
+                "line" : 4,
+                "name" : "eva_calculate_signal_times_omit(NumericMatrix, IntegerMatrix, IntegerVector, NumericVector, double)",
+                "parent_name" : "",
+                "usr" : "c:@F@eva_calculate_signal_times_omit#$@N@Rcpp@S@Matrix>#VI14#@N@Rcpp@ST>1#T@PreserveStorage#$@N@Rcpp@S@Matrix>#VI13#@N@Rcpp@ST>1#T@PreserveStorage#$@N@Rcpp@S@Vector>#VI13#@N@Rcpp@ST>1#T@PreserveStorage#$@N@Rcpp@S@Vector>#VI14#@N@Rcpp@ST>1#T@PreserveStorage#d#"
+            }
+        ],
+        "file" : "/Users/luyou/Dropbox/clean_folder/DySS/src/cpp_eva_calculate_signal_times.cpp",
+        "file_last_write" : 1597372970.000000
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 6,
+                "file" : "/Users/luyou/Dropbox/clean_folder/DySS/src/cpp_eva_four_elements.cpp",
+                "kind" : 6,
+                "line" : 5,
+                "name" : "eva_four_elements_omit(NumericMatrix, NumericMatrix, IntegerVector, NumericMatrix, NumericMatrix, IntegerVector, NumericVector)",
+                "parent_name" : "",
+                "usr" : "c:@F@eva_four_elements_omit#$@N@Rcpp@S@Matrix>#VI14#@N@Rcpp@ST>1#T@PreserveStorage#S0_#$@N@Rcpp@S@Vector>#VI13#@N@Rcpp@ST>1#T@PreserveStorage#S0_#S0_#S1_#$@N@Rcpp@S@Vector>#VI14#@N@Rcpp@ST>1#T@PreserveStorage#"
+            },
+            {
+                "column" : 6,
+                "file" : "/Users/luyou/Dropbox/clean_folder/DySS/src/cpp_eva_four_elements.cpp",
+                "kind" : 6,
+                "line" : 73,
+                "name" : "eva_four_elements_impute(NumericMatrix, NumericMatrix, IntegerVector, IntegerVector, NumericMatrix, NumericMatrix, IntegerVector, IntegerVector, NumericVector)",
+                "parent_name" : "",
+                "usr" : "c:@F@eva_four_elements_impute#$@N@Rcpp@S@Matrix>#VI14#@N@Rcpp@ST>1#T@PreserveStorage#S0_#$@N@Rcpp@S@Vector>#VI13#@N@Rcpp@ST>1#T@PreserveStorage#S1_#S0_#S0_#S1_#S1_#$@N@Rcpp@S@Vector>#VI14#@N@Rcpp@ST>1#T@PreserveStorage#"
+            }
+        ],
+        "file" : "/Users/luyou/Dropbox/clean_folder/DySS/src/cpp_eva_four_elements.cpp",
+        "file_last_write" : 1597031565.000000
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 6,
+                "file" : "/Users/luyou/Dropbox/clean_folder/DySS/src/cpp_joint_local_const.cpp",
+                "kind" : 6,
+                "line" : 6,
+                "name" : "joint_local_const(arma::cube, arma::icube, arma::imat, arma::ivec, arma::ivec, LogicalVector, arma::ivec, int, int)",
+                "parent_name" : "",
+                "usr" : "c:@F@joint_local_const#$@N@arma@S@Cube>#d#$@N@arma@S@Cube>#I#$@N@arma@S@Mat>#I#$@N@arma@S@Col>#I#S3_#$@N@Rcpp@S@Vector>#VI10#@N@Rcpp@ST>1#T@PreserveStorage#S3_#I#I#"
+            }
+        ],
+        "file" : "/Users/luyou/Dropbox/clean_folder/DySS/src/cpp_joint_local_const.cpp",
+        "file_last_write" : 1597782194.000000
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 6,
+                "file" : "/Users/luyou/Dropbox/clean_folder/DySS/src/cpp_joint_local_linear.cpp",
+                "kind" : 6,
+                "line" : 6,
+                "name" : "joint_local_linear(arma::cube, arma::icube, arma::imat, arma::ivec, arma::ivec, LogicalVector, arma::ivec, int, int)",
+                "parent_name" : "",
+                "usr" : "c:@F@joint_local_linear#$@N@arma@S@Cube>#d#$@N@arma@S@Cube>#I#$@N@arma@S@Mat>#I#$@N@arma@S@Col>#I#S3_#$@N@Rcpp@S@Vector>#VI10#@N@Rcpp@ST>1#T@PreserveStorage#S3_#I#I#"
+            }
+        ],
+        "file" : "/Users/luyou/Dropbox/clean_folder/DySS/src/cpp_joint_local_linear.cpp",
+        "file_last_write" : 1597782232.000000
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 6,
+                "file" : "/Users/luyou/Dropbox/clean_folder/DySS/src/cpp_joint_local_quadratic.cpp",
+                "kind" : 6,
+                "line" : 6,
+                "name" : "joint_local_quadratic(arma::cube, arma::icube, arma::imat, arma::ivec, arma::ivec, LogicalVector, arma::ivec, int, int)",
+                "parent_name" : "",
+                "usr" : "c:@F@joint_local_quadratic#$@N@arma@S@Cube>#d#$@N@arma@S@Cube>#I#$@N@arma@S@Mat>#I#$@N@arma@S@Col>#I#S3_#$@N@Rcpp@S@Vector>#VI10#@N@Rcpp@ST>1#T@PreserveStorage#S3_#I#I#"
+            }
+        ],
+        "file" : "/Users/luyou/Dropbox/clean_folder/DySS/src/cpp_joint_local_quadratic.cpp",
+        "file_last_write" : 1597782281.000000
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 15,
+                "file" : "/Users/luyou/Dropbox/clean_folder/DySS/src/cpp_local_const_cov_est_faster.cpp",
+                "kind" : 6,
+                "line" : 5,
+                "name" : "local_const_cov_est_faster(NumericMatrix, IntegerMatrix, IntegerVector, IntegerVector, const int)",
+                "parent_name" : "",
+                "usr" : "c:@F@local_const_cov_est_faster#$@N@Rcpp@S@Matrix>#VI14#@N@Rcpp@ST>1#T@PreserveStorage#$@N@Rcpp@S@Matrix>#VI13#@N@Rcpp@ST>1#T@PreserveStorage#$@N@Rcpp@S@Vector>#VI13#@N@Rcpp@ST>1#T@PreserveStorage#S2_#1I#"
+            }
+        ],
+        "file" : "/Users/luyou/Dropbox/clean_folder/DySS/src/cpp_local_const_cov_est_faster.cpp",
+        "file_last_write" : 1594588524.000000
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 15,
+                "file" : "/Users/luyou/Dropbox/clean_folder/DySS/src/cpp_local_const_mean_est_faster.cpp",
+                "kind" : 6,
+                "line" : 5,
+                "name" : "local_const_mean_est_faster(NumericMatrix, IntegerMatrix, IntegerVector, IntegerVector, const int)",
+                "parent_name" : "",
+                "usr" : "c:@F@local_const_mean_est_faster#$@N@Rcpp@S@Matrix>#VI14#@N@Rcpp@ST>1#T@PreserveStorage#$@N@Rcpp@S@Matrix>#VI13#@N@Rcpp@ST>1#T@PreserveStorage#$@N@Rcpp@S@Vector>#VI13#@N@Rcpp@ST>1#T@PreserveStorage#S2_#1I#"
+            }
+        ],
+        "file" : "/Users/luyou/Dropbox/clean_folder/DySS/src/cpp_local_const_mean_est_faster.cpp",
+        "file_last_write" : 1593897514.000000
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 11,
+                "file" : "/Users/luyou/Dropbox/clean_folder/DySS/src/cpp_local_const_mean_est_update_faster.cpp",
+                "kind" : 6,
+                "line" : 5,
+                "name" : "local_const_mean_est_update_faster(arma::mat, arma::imat, arma::ivec, arma::ivec, const int, arma::mat)",
+                "parent_name" : "",
+                "usr" : "c:@F@local_const_mean_est_update_faster#$@N@arma@S@Mat>#d#$@N@arma@S@Mat>#I#$@N@arma@S@Col>#I#S2_#1I#S0_#"
+            }
+        ],
+        "file" : "/Users/luyou/Dropbox/clean_folder/DySS/src/cpp_local_const_mean_est_update_faster.cpp",
+        "file_last_write" : 1594737455.000000
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 15,
+                "file" : "/Users/luyou/Dropbox/clean_folder/DySS/src/cpp_local_const_percentile_est_faster.cpp",
+                "kind" : 6,
+                "line" : 5,
+                "name" : "local_const_percentile_est_faster(NumericMatrix, IntegerMatrix, IntegerVector, NumericVector, IntegerVector, IntegerVector, IntegerVector, NumericVector, const int, const int, const double)",
+                "parent_name" : "",
+                "usr" : "c:@F@local_const_percentile_est_faster#$@N@Rcpp@S@Matrix>#VI14#@N@Rcpp@ST>1#T@PreserveStorage#$@N@Rcpp@S@Matrix>#VI13#@N@Rcpp@ST>1#T@PreserveStorage#$@N@Rcpp@S@Vector>#VI13#@N@Rcpp@ST>1#T@PreserveStorage#$@N@Rcpp@S@Vector>#VI14#@N@Rcpp@ST>1#T@PreserveStorage#S2_#S2_#S2_#S3_#1I#1I#1d#"
+            }
+        ],
+        "file" : "/Users/luyou/Dropbox/clean_folder/DySS/src/cpp_local_const_percentile_est_faster.cpp",
+        "file_last_write" : 1594653539.000000
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 15,
+                "file" : "/Users/luyou/Dropbox/clean_folder/DySS/src/cpp_local_linear_cov_est_faster.cpp",
+                "kind" : 6,
+                "line" : 4,
+                "name" : "local_linear_cov_est_faster(NumericMatrix, IntegerMatrix, IntegerVector, IntegerVector, const int)",
+                "parent_name" : "",
+                "usr" : "c:@F@local_linear_cov_est_faster#$@N@Rcpp@S@Matrix>#VI14#@N@Rcpp@ST>1#T@PreserveStorage#$@N@Rcpp@S@Matrix>#VI13#@N@Rcpp@ST>1#T@PreserveStorage#$@N@Rcpp@S@Vector>#VI13#@N@Rcpp@ST>1#T@PreserveStorage#S2_#1I#"
+            }
+        ],
+        "file" : "/Users/luyou/Dropbox/clean_folder/DySS/src/cpp_local_linear_cov_est_faster.cpp",
+        "file_last_write" : 1594588597.000000
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 15,
+                "file" : "/Users/luyou/Dropbox/clean_folder/DySS/src/cpp_local_linear_mean_est_faster.cpp",
+                "kind" : 6,
+                "line" : 5,
+                "name" : "local_linear_mean_est_faster(NumericMatrix, IntegerMatrix, IntegerVector, IntegerVector, const int)",
+                "parent_name" : "",
+                "usr" : "c:@F@local_linear_mean_est_faster#$@N@Rcpp@S@Matrix>#VI14#@N@Rcpp@ST>1#T@PreserveStorage#$@N@Rcpp@S@Matrix>#VI13#@N@Rcpp@ST>1#T@PreserveStorage#$@N@Rcpp@S@Vector>#VI13#@N@Rcpp@ST>1#T@PreserveStorage#S2_#1I#"
+            }
+        ],
+        "file" : "/Users/luyou/Dropbox/clean_folder/DySS/src/cpp_local_linear_mean_est_faster.cpp",
+        "file_last_write" : 1593897636.000000
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 11,
+                "file" : "/Users/luyou/Dropbox/clean_folder/DySS/src/cpp_local_linear_mean_est_update_faster.cpp",
+                "kind" : 6,
+                "line" : 5,
+                "name" : "local_linear_mean_est_update_faster(arma::mat, arma::imat, arma::ivec, arma::ivec, const int, arma::mat)",
+                "parent_name" : "",
+                "usr" : "c:@F@local_linear_mean_est_update_faster#$@N@arma@S@Mat>#d#$@N@arma@S@Mat>#I#$@N@arma@S@Col>#I#S2_#1I#S0_#"
+            }
+        ],
+        "file" : "/Users/luyou/Dropbox/clean_folder/DySS/src/cpp_local_linear_mean_est_update_faster.cpp",
+        "file_last_write" : 1594057702.000000
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 6,
+                "file" : "/Users/luyou/Dropbox/clean_folder/DySS/src/cpp_mchart1_decorrelation_CUSUM_multivariate.cpp",
+                "kind" : 6,
+                "line" : 5,
+                "name" : "mchart1_decorrelation_CUSUM_multivariate_both(arma::vec, arma::mat, int, int, double, double)",
+                "parent_name" : "",
+                "usr" : "c:@F@mchart1_decorrelation_CUSUM_multivariate_both#$@N@arma@S@Col>#d#$@N@arma@S@Mat>#d#I#I#d#d#"
+            },
+            {
+                "column" : 6,
+                "file" : "/Users/luyou/Dropbox/clean_folder/DySS/src/cpp_mchart1_decorrelation_CUSUM_multivariate.cpp",
+                "kind" : 6,
+                "line" : 58,
+                "name" : "mchart1_decorrelation_CUSUM_multivariate_upward(arma::vec, arma::mat, int, int, double, double)",
+                "parent_name" : "",
+                "usr" : "c:@F@mchart1_decorrelation_CUSUM_multivariate_upward#$@N@arma@S@Col>#d#$@N@arma@S@Mat>#d#I#I#d#d#"
+            }
+        ],
+        "file" : "/Users/luyou/Dropbox/clean_folder/DySS/src/cpp_mchart1_decorrelation_CUSUM_multivariate.cpp",
+        "file_last_write" : 1595176372.000000
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 6,
+                "file" : "/Users/luyou/Dropbox/clean_folder/DySS/src/cpp_mchart1_decorrelation_EWMA_multivariate.cpp",
+                "kind" : 6,
+                "line" : 5,
+                "name" : "mchart1_decorrelation_EWMA_multivariate_both(arma::vec, arma::mat, int, int, double, double)",
+                "parent_name" : "",
+                "usr" : "c:@F@mchart1_decorrelation_EWMA_multivariate_both#$@N@arma@S@Col>#d#$@N@arma@S@Mat>#d#I#I#d#d#"
+            },
+            {
+                "column" : 6,
+                "file" : "/Users/luyou/Dropbox/clean_folder/DySS/src/cpp_mchart1_decorrelation_EWMA_multivariate.cpp",
+                "kind" : 6,
+                "line" : 47,
+                "name" : "mchart1_decorrelation_EWMA_multivariate_upward(arma::vec, arma::mat, int, int, double, double)",
+                "parent_name" : "",
+                "usr" : "c:@F@mchart1_decorrelation_EWMA_multivariate_upward#$@N@arma@S@Col>#d#$@N@arma@S@Mat>#d#I#I#d#d#"
+            }
+        ],
+        "file" : "/Users/luyou/Dropbox/clean_folder/DySS/src/cpp_mchart1_decorrelation_EWMA_multivariate.cpp",
+        "file_last_write" : 1595278277.000000
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 6,
+                "file" : "/Users/luyou/Dropbox/clean_folder/DySS/src/cpp_mchart1_multivariate_CUSUM_multivariate.cpp",
+                "kind" : 6,
+                "line" : 5,
+                "name" : "mchart1_multivariate_CUSUM_multivariate_both(arma::mat, int, arma::cube, int, double, double)",
+                "parent_name" : "",
+                "usr" : "c:@F@mchart1_multivariate_CUSUM_multivariate_both#$@N@arma@S@Mat>#d#I#$@N@arma@S@Cube>#d#I#d#d#"
+            },
+            {
+                "column" : 6,
+                "file" : "/Users/luyou/Dropbox/clean_folder/DySS/src/cpp_mchart1_multivariate_CUSUM_multivariate.cpp",
+                "kind" : 6,
+                "line" : 38,
+                "name" : "mchart1_multivariate_CUSUM_multivariate_upward(arma::mat, int, arma::cube, int, double, double)",
+                "parent_name" : "",
+                "usr" : "c:@F@mchart1_multivariate_CUSUM_multivariate_upward#$@N@arma@S@Mat>#d#I#$@N@arma@S@Cube>#d#I#d#d#"
+            }
+        ],
+        "file" : "/Users/luyou/Dropbox/clean_folder/DySS/src/cpp_mchart1_multivariate_CUSUM_multivariate.cpp",
+        "file_last_write" : 1595176466.000000
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 6,
+                "file" : "/Users/luyou/Dropbox/clean_folder/DySS/src/cpp_mchart1_multivariate_EWMA_multivariate.cpp",
+                "kind" : 6,
+                "line" : 5,
+                "name" : "mchart1_multivariate_EWMA_multivariate_both(arma::mat, int, arma::cube, int, double, double)",
+                "parent_name" : "",
+                "usr" : "c:@F@mchart1_multivariate_EWMA_multivariate_both#$@N@arma@S@Mat>#d#I#$@N@arma@S@Cube>#d#I#d#d#"
+            },
+            {
+                "column" : 6,
+                "file" : "/Users/luyou/Dropbox/clean_folder/DySS/src/cpp_mchart1_multivariate_EWMA_multivariate.cpp",
+                "kind" : 6,
+                "line" : 35,
+                "name" : "mchart1_multivariate_EWMA_multivariate_upward(arma::mat, int, arma::cube, int, double, double)",
+                "parent_name" : "",
+                "usr" : "c:@F@mchart1_multivariate_EWMA_multivariate_upward#$@N@arma@S@Mat>#d#I#$@N@arma@S@Cube>#d#I#d#d#"
+            }
+        ],
+        "file" : "/Users/luyou/Dropbox/clean_folder/DySS/src/cpp_mchart1_multivariate_EWMA_multivariate.cpp",
+        "file_last_write" : 1595177518.000000
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 11,
+                "file" : "/Users/luyou/Dropbox/clean_folder/DySS/src/cpp_risk_estimate_beta.cpp",
+                "kind" : 6,
+                "line" : 5,
+                "name" : "risk_estimate_beta(arma::cube, arma::imat, arma::ivec, arma::ivec, arma::ivec, LogicalVector, arma::mat, int, int)",
+                "parent_name" : "",
+                "usr" : "c:@F@risk_estimate_beta#$@N@arma@S@Cube>#d#$@N@arma@S@Mat>#I#$@N@arma@S@Col>#I#S2_#S2_#$@N@Rcpp@S@Vector>#VI10#@N@Rcpp@ST>1#T@PreserveStorage#$@N@arma@S@Mat>#d#I#I#"
+            }
+        ],
+        "file" : "/Users/luyou/Dropbox/clean_folder/DySS/src/cpp_risk_estimate_beta.cpp",
+        "file_last_write" : 1597028787.000000
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 21,
+                "file" : "/Users/luyou/Dropbox/clean_folder/DySS/src/fortran_wrappers.cpp",
+                "kind" : 6,
+                "line" : 36,
+                "name" : "f90_local_const_mean_est_mult_wrap(Rcpp::NumericVector, Rcpp::IntegerVector, Rcpp::IntegerVector, int, int, int, int, int, Rcpp::NumericVector)",
+                "parent_name" : "",
+                "usr" : "c:@F@f90_local_const_mean_est_mult_wrap#$@N@Rcpp@S@Vector>#VI14#@N@Rcpp@ST>1#T@PreserveStorage#$@N@Rcpp@S@Vector>#VI13#@N@Rcpp@ST>1#T@PreserveStorage#S1_#I#I#I#I#I#S0_#"
+            },
+            {
+                "column" : 21,
+                "file" : "/Users/luyou/Dropbox/clean_folder/DySS/src/fortran_wrappers.cpp",
+                "kind" : 6,
+                "line" : 45,
+                "name" : "f90_local_const_var_est_mult_wrap(Rcpp::NumericVector, Rcpp::IntegerVector, Rcpp::IntegerVector, int, int, int, int, int, Rcpp::NumericVector)",
+                "parent_name" : "",
+                "usr" : "c:@F@f90_local_const_var_est_mult_wrap#$@N@Rcpp@S@Vector>#VI14#@N@Rcpp@ST>1#T@PreserveStorage#$@N@Rcpp@S@Vector>#VI13#@N@Rcpp@ST>1#T@PreserveStorage#S1_#I#I#I#I#I#S0_#"
+            },
+            {
+                "column" : 21,
+                "file" : "/Users/luyou/Dropbox/clean_folder/DySS/src/fortran_wrappers.cpp",
+                "kind" : 6,
+                "line" : 54,
+                "name" : "f90_local_const_cov_est_mult_wrap(Rcpp::NumericVector, Rcpp::IntegerVector, Rcpp::IntegerVector, int, int, int, int, int, Rcpp::NumericVector)",
+                "parent_name" : "",
+                "usr" : "c:@F@f90_local_const_cov_est_mult_wrap#$@N@Rcpp@S@Vector>#VI14#@N@Rcpp@ST>1#T@PreserveStorage#$@N@Rcpp@S@Vector>#VI13#@N@Rcpp@ST>1#T@PreserveStorage#S1_#I#I#I#I#I#S0_#"
+            },
+            {
+                "column" : 12,
+                "file" : "/Users/luyou/Dropbox/clean_folder/DySS/src/fortran_wrappers.cpp",
+                "kind" : 6,
+                "line" : 63,
+                "name" : "f90_mchart_simultaneous_CUSUM_both_wrap(Rcpp::NumericVector, Rcpp::IntegerVector, int, int, int, double, double, Rcpp::NumericVector, Rcpp::NumericVector, Rcpp::NumericVector)",
+                "parent_name" : "",
+                "usr" : "c:@F@f90_mchart_simultaneous_CUSUM_both_wrap#$@N@Rcpp@S@Vector>#VI14#@N@Rcpp@ST>1#T@PreserveStorage#$@N@Rcpp@S@Vector>#VI13#@N@Rcpp@ST>1#T@PreserveStorage#I#I#I#d#d#S0_#S0_#S0_#"
+            },
+            {
+                "column" : 12,
+                "file" : "/Users/luyou/Dropbox/clean_folder/DySS/src/fortran_wrappers.cpp",
+                "kind" : 6,
+                "line" : 78,
+                "name" : "f90_mchart_simultaneous_CUSUM_upward_wrap(Rcpp::NumericVector, Rcpp::IntegerVector, int, int, int, double, double, Rcpp::NumericVector, Rcpp::NumericVector)",
+                "parent_name" : "",
+                "usr" : "c:@F@f90_mchart_simultaneous_CUSUM_upward_wrap#$@N@Rcpp@S@Vector>#VI14#@N@Rcpp@ST>1#T@PreserveStorage#$@N@Rcpp@S@Vector>#VI13#@N@Rcpp@ST>1#T@PreserveStorage#I#I#I#d#d#S0_#S0_#"
+            },
+            {
+                "column" : 12,
+                "file" : "/Users/luyou/Dropbox/clean_folder/DySS/src/fortran_wrappers.cpp",
+                "kind" : 6,
+                "line" : 92,
+                "name" : "f90_mchart_simultaneous_EWMA_both_wrap(Rcpp::NumericVector, Rcpp::IntegerVector, int, int, int, double, double, Rcpp::NumericVector, Rcpp::NumericVector)",
+                "parent_name" : "",
+                "usr" : "c:@F@f90_mchart_simultaneous_EWMA_both_wrap#$@N@Rcpp@S@Vector>#VI14#@N@Rcpp@ST>1#T@PreserveStorage#$@N@Rcpp@S@Vector>#VI13#@N@Rcpp@ST>1#T@PreserveStorage#I#I#I#d#d#S0_#S0_#"
+            },
+            {
+                "column" : 12,
+                "file" : "/Users/luyou/Dropbox/clean_folder/DySS/src/fortran_wrappers.cpp",
+                "kind" : 6,
+                "line" : 106,
+                "name" : "f90_mchart_simultaneous_EWMA_upward_wrap(Rcpp::NumericVector, Rcpp::IntegerVector, int, int, int, double, double, Rcpp::NumericVector, Rcpp::NumericVector)",
+                "parent_name" : "",
+                "usr" : "c:@F@f90_mchart_simultaneous_EWMA_upward_wrap#$@N@Rcpp@S@Vector>#VI14#@N@Rcpp@ST>1#T@PreserveStorage#$@N@Rcpp@S@Vector>#VI13#@N@Rcpp@ST>1#T@PreserveStorage#I#I#I#d#d#S0_#S0_#"
+            }
+        ],
+        "file" : "/Users/luyou/Dropbox/clean_folder/DySS/src/fortran_wrappers.cpp",
+        "file_last_write" : 1619059094.000000
+    }
+]

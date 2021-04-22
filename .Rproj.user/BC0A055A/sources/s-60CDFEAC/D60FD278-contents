@@ -1,0 +1,392 @@
+---
+title: "DySS"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{DySS}
+  %\VignetteEncoding{UTF-8}
+  %\VignetteEngine{knitr::rmarkdown}
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.width=5,
+  fig.height=4)
+```
+
+```{r setup}
+library(DySS)
+```
+
+## Methods for Univariate Longitudinal Data
+
+### Preliminaries: How to Prepare Data
+
+We consider a typical longitudinal dataset. Suppose that there are $m$ subjects, and for the $i$th subject, the longitudinal measurements are taken at times $t_{i1},\ldots,t_{in_i}$ in the design interval $[T_\text{min},T_\text{max}]$, where $n_i$ is the number of observations for the $i$th subject. The corresponding measurements at those times are denoted by $y_{i1},\ldots,y_{in_i}$. To use this package, it is adviced to prepare the data set in the following way. First, we need to create the following matrix to store data $y_{ij}$:
+$$
+\mathbf{Y}=
+\begin{bmatrix}
+y_{11}&y_{12}&\cdots&\cdots&y_{1n_1}&\text{NA}&\text{NA}\\
+y_{21}&y_{22}&\cdots&y_{2n_2}&\text{NA}&\text{NA}&\text{NA}\\
+\vdots&\vdots&\cdots&\cdots&\cdots&\cdots&\cdots\\
+y_{m1}&y_{m2}&\cdots&\cdots&\cdots&y_{mn_m}&\text{NA}\\
+\end{bmatrix}.
+$$
+
+Note that the $(i,j)$th element of the matrix is $y_{ij}$ if $j\le n_i$ and \code{NA} otherwise. Similarly, the observation times should be prepared a matrix of this form:
+$$
+\mathbf{T}=
+\begin{bmatrix}
+t_{11}&t_{12}&\cdots&\cdots&t_{1n_1}&\text{NA}&\text{NA}\\
+t_{21}&t_{22}&\cdots&t_{2n_2}&\text{NA}&\text{NA}&\text{NA}\\
+\vdots&\vdots&\cdots&\cdots&\cdots&\cdots&\cdots\\
+t_{m1}&t_{m2}&\cdots&\cdots&\cdots&t_{mn_m}&\text{NA}\\
+\end{bmatrix}.
+$$
+
+The number of observations are stored in a vector:
+$$
+\mathbf{N}=(n_1,\ldots,n_m)'.
+$$
+where the $i$ the component is the number of observations for the $i$th subject.
+
+The above three are the main componentents that are needed for the analysis. Other ancillary information (e.g., starting times, ending times, etc) is usually stored in a vector.
+
+### Step 1: Estimation of Univariate Longitudinal Pattern
+
+We will demonstrate the use of this package using a simulated dataset. First we load the dataset.
+```{r}
+data("example_long_1d")
+```
+
+The regular longitudinal pattern is estimated from $m$ well-functioning subjects. The longitudinal measurements and observation times are stored in the matrices
+```{r}
+head(example_long_1d$yyij_IC[,1:5])
+head(example_long_1d$ttij_IC[,1:5])
+```
+and the number of observations are stored in the vector
+```{r}
+head(example_long_1d$nobs_IC)
+```
+
+The regular longitudinal pattern is estimated from $m$ well-functioning subjects. Suppose that for the $i$th subject, the measurements are taken at times $t_{i1},\ldots,t_{in_i}$ in the design interval $[T_\text{min},T_\text{max}]$, where $n_i$ is the number of observations for the $i$th subject. The corresponding measurements at those times are denoted by $y_{i1},\ldots,y_{in_i}$. Then we can apply function \code{est_pattern_long_1d} to estimate the pattern. 
+```{r}
+ntimepoints<-example_long_1d$ntimepoints
+nind_IC<-nrow(example_long_1d$yyij_IC)
+nind_OC<-nrow(example_long_1d$yyij_OC)
+
+pattern<-est_pattern_long_1d(
+  example_long_1d$yyij_IC,
+  example_long_1d$ttij_IC,
+  example_long_1d$nobs_IC,
+  ttmin=1,
+  ttmax=ntimepoints,
+  ntimepoints=ntimepoints,
+  smoothing="local constant",method="meanvar",
+  hh_mean=20,hh_var=20)
+```
+The estimated pattern is then saved in the object \code{pattern}. In the analysis, the design interval and all observed times are discretized into multiples of basic time units. \code{ttmin} ($T_\text{min}$) and \code{ttmax} ($T_\text{max}$) are the left and right ends of the design interval and \code{ntimepoints} is the number of basic time units. That is to say, all observed times are rounded to the nearest number in the sequence
+$$
+\texttt{ttmin},\ \texttt{ttmin}+\omega,\ \texttt{ttmin}+2\omega,\ \ldots, \texttt{ttmax}
+$$
+where $\omega=1/(\texttt{ntimepoints}-1)$. The mean function and variance function are estimated (\code{method="meanvar"}) where we used local constant smoothing (\code{smoothing="local constant"}). The mean and variance at time $t$ will be estimated by some weighted average of the observations in the neighborhood $[t-\texttt{hh}\cdot\omega,t+\texttt{hh}\cdot\omega]$. Different methods will require different bandwidth parameters. Here we need \code{hh_mean} and \code{hh_var}. Here is a list of available methods for estimating the longitudinal pattern:
+```
+Method               Output                             Require
+"meanvar"            class: "patn_long_univ_meanvar"    hh_mean,hh_var
+"meanvarcov"         class: "patn_long_univ_meanvarcov" hh_mean,hh_var,hh_cov
+"meanvarcovmean"     class: "patn_long_univ_meanvarcov" hh_mean,hh_var,hh_cov
+"distribution"       class: "patn_long_univ_dist"       hh_t,hh_y
+"distributionvarcov" class: "patn_long_univ_distvarcov" hh_t,hh_y,hh_cov
+```
+We can use R to visualize the estimated mean to check the fit.
+```{r}
+with(example_long_1d,
+     matplot(t(ttij_IC),t(yyij_IC),type="l",col="gray",
+             xlab="t",ylab="y",main="Data and Estimated Mean"))
+lines(pattern$mean_est,type="l",col="blue",lwd=2)
+```
+
+### Step 2: Monitor Univariate Longitudinal Data
+In this step, we apply control charts to monitor if subjects are following the same pattern that we just estimated. A signal will be triggered if there is a big deviation between the observed longitudinal data and the estimated pattern. Subjects are monitored by control charts, and the function \code{mnt_long_1d} will calculate the charting statistics for us. Here is an example of how to use this function:
+```{r}
+chart_IC_output<-mnt_long_1d(
+  example_long_1d$yyij_IC,
+  example_long_1d$ttij_IC,
+  example_long_1d$nobs_IC,
+  pattern=pattern,side="upward",chart="CUSUM",
+  method="standard",parameter=0.2)
+
+chart_OC_output<-mnt_long_1d(
+  example_long_1d$yyij_OC,
+  example_long_1d$ttij_OC,
+  example_long_1d$nobs_OC,
+  pattern=pattern,side="upward",chart="CUSUM",
+  method="standard",parameter=0.2)
+```
+The resulting charting statistics are stored in the matrices
+```{r}
+head(chart_IC_output$chart[,1:10])
+head(chart_OC_output$chart[,1:10])
+```
+
+Here is a list of methods that can be applied to monitoring univariate longitudinal data.
+```
+Method                            Pattern Should Be
+"standard"                        "meanvar" or "meanvarcov"
+"decorrelation"                   "meanvarcov"
+"sprint"                          "meanvarcov"
+"distribution and standard"       "distribution" or "distributionvarcov"
+"distribution and decorrelation"  "distributionvarcov"
+"distribution and sprint"         "distributionvarcov"
+```
+
+### Step 3: Evaluate Performance
+Given a control limit, we can evaluate the performance of control charts. We can apply function \code{eva_calculate_signal_times} to find the signal times.
+```{r}
+CL<-4
+output_signal_times<-
+  eva_calculate_signal_times(
+    chart_IC_output$chart,
+    example_long_1d$ttij_IC,
+    example_long_1d$nobs_IC,
+    starttime=rep(0,nind_IC),
+    endtime=rep(ntimepoints,nind_IC),
+    ttmin=1,ttmax=ntimepoints,
+    ntimepoints=ntimepoints,
+    CL)
+
+head(data.frame(
+  signal_time=output_signal_times$signal_times,
+  signal=output_signal_times$signals))
+```
+In practice, one usually needs to select a control limit such that the average time to signal (ATS) is fixed when the method is applied to IC subjects. We can also apply the function to select control limit \code{search_CL}, and then calculate the ATS by the function \code{eva_calculate_ATS}.
+```{r}
+CL<-search_CL(
+  chart_IC_output$chart,
+  example_long_1d$ttij_IC,
+  example_long_1d$nobs_IC,
+  starttime=rep(0,nind_IC),
+  endtime=rep(ntimepoints,nind_IC),
+  ttmin=1,ttmax=ntimepoints,
+  ntimepoints=ntimepoints,
+  ATS_nominal=50,
+  CL_lower=0,CL_upper=10,CL_step=0.1)
+
+ATS<-eva_calculate_ATS(
+  chart_IC_output$chart,
+  example_long_1d$ttij_IC,
+  example_long_1d$nobs_IC,
+  starttime=rep(0,nind_IC),
+  endtime=rep(ntimepoints,nind_IC),
+  ttmin=1,ttmax=ntimepoints,
+  ntimepoints=ntimepoints,
+  CL)
+```
+
+We can evaluate the control charts by ROC curves and PM-ROC curves. We can apply the functions \code{eva_control_chart_one} or \code{eva_control_chart_two} to perform the evaluation, and the functions \code{plot.eva_control_chart} and \code{plot_PMROC} to visualize the curves.
+
+The \code{eva_control_chart_two} function takes the IC data and OC data separately as different arguments.
+
+```{r}
+eva_output_two<-eva_control_chart_two(
+  chart_IC_output$chart,example_long_1d$ttij_IC,example_long_1d$nobs_IC,
+  rep(1,nind_IC),rep(ntimepoints,nind_IC),
+  chart_OC_output$chart,example_long_1d$ttij_OC,example_long_1d$nobs_OC,
+  rep(1,nind_OC),rep(ntimepoints,nind_OC),
+  ttmin=1,ttmax=ntimepoints,
+  ntimepoints=ntimepoints)
+```
+
+```{r,fig.width=7}
+plot(eva_output_two)
+```
+
+```{r}
+plot_PMROC(eva_output_two)
+```
+
+The \code{eva_control_chart_one} function takes the combined data set of IC and OC data as arguments. We can similarly apply the functions \code{plot.eva_control_chart} and \code{plot_PMROC} to visualize the curves.
+
+```{r}
+eva_output_one<-eva_control_chart_one(
+  rbind(chart_IC_output$chart,chart_OC_output$chart),
+  rbind(example_long_1d$ttij_IC,example_long_1d$ttij_OC),
+  c(example_long_1d$nobs_IC,example_long_1d$nobs_OC),
+  rep(1,nind_IC+nind_OC),
+  rep(ntimepoints,nind_IC+nind_OC),
+  event=rep(c(FALSE,TRUE),c(nind_IC,nind_OC)),
+  ttmin=1,ttmax=ntimepoints,ntimepoints=ntimepoints)
+```
+
+```{r,fig.width=7}
+plot(eva_output_one)
+```
+
+```{r}
+plot_PMROC(eva_output_one)
+```
+
+## Methods for Multivariate Longitudinal Data
+
+### Preliminaries: How to Prepare Data
+
+Similarly, we assume that for the $i$th subject, the longitudinal measurements are taken at times $t_{i1},\ldots,t_{in_i}$ in the design interval $[0,T]$, where $n_i$ is the number of observations for the $i$th subject. The corresponding measurements at those times are denoted by $\mathbf{y}_{i1},\ldots,\mathbf{y}_{in_i}$. Each $\mathbf{y}_{ij}$ is a $p$-dimensional vector $(y_{ij1},\ldots,y_{ijp})'$. Observation times and number of observations can be similarly stored in matrix $\mathbf{T}$ and $\mathbf{N}$. Longitudinal data should be prepared in a 3 dimensional array $\mathbf{Y}$, such that the $(i,j,k)$th component of $\mathbf{Y}$ is $y_{ijk}$.
+
+### Step 1: Estimation of Univariate Longitudinal Pattern
+
+We will demonstrate the use of this package using a simulated dataset. First we load the dataset.
+```{r}
+data("example_long_md")
+```
+
+The regular longitudinal pattern is estimated from $m$ well-functioning subjects. The longitudinal measurements are stored in the 3 dimensional array
+```{r}
+example_long_md$yyijk_IC[1:6,1:5,]
+```
+the observatime times are stored in the matrix
+```{r}
+head(example_long_md$ttij_IC[,1:5])
+```
+and the number of observations are stored in the vector
+```{r}
+head(example_long_md$nobs_IC)
+```
+
+We can apply function \code{est_pattern_long_md} to estimate the pattern.
+```{r}
+nind_IC<-dim(example_long_md$yyijk_IC)[1]
+nind_OC<-dim(example_long_md$yyijk_OC)[1]
+ntimepoints<-example_long_md$ntimepoints
+ndim<-dim(example_long_md$yyijk_IC)[3]
+
+pattern<-est_pattern_long_md(
+  example_long_md$yyijk_IC,
+  example_long_md$ttij_IC,
+  example_long_md$nobs_IC,
+  ttmin=1,ttmax=ntimepoints,ntimepoints=ntimepoints,
+  method="meanvarcov",hh_mean=8,hh_var=8,hh_cov=8)
+```
+
+The estimated pattern is then saved in the object \code{pattern}. In the analysis, the design interval and all observed times are also discretized into multiples of basic time units. \code{ttmin} and \code{ttmax} are the left and right ends of the design interval and \code{ntimepoints} is the number of basic time units.
+
+Here is a list of available methods for estimating multivariate longitudinal pattern:
+
+```
+Method       Output                             Required arguments
+"meanvar"    class: "patn_long_univ_meanvar"    hh_mean, hh_var
+"meanvarcov" class: "patn_long_univ_meanvarcov" hh_mean, hh_var, hh_cov
+```
+
+### Step 2: Monitor Multivariate Longitudinal Data
+In this step, we apply control charts to monitor if subjects are following the same pattern that we just estimated. A signal will be triggered if there is a big deviation between the observed longitudinal data and the estimated pattern. Subjects are monitored by control charts, and the function \code{mnt_long_md} will calculate the charting statistics for us. The use is very similar to \code{mnt_long_md}.
+
+```{r}
+chart_IC_output<-mnt_long_md(
+  example_long_md$yyijk_IC,
+  example_long_md$ttij_IC,
+  example_long_md$nobs_IC,
+  pattern,side="upward",
+  method="decorrelation EWMA",
+  parameter=0.5,CL=Inf)
+
+chart_OC_output<-mnt_long_md(
+  example_long_md$yyijk_OC,
+  example_long_md$ttij_OC,
+  example_long_md$nobs_OC,
+  pattern,side="upward",
+  method="decorrelation EWMA",
+  parameter=0.5,CL=Inf)
+```
+
+Here is a list of methods that can be applied to monitoring univariate longitudinal data.
+```
+Method                Pattern Should Be
+"simultaneous CUSUM"  "patn_long_mult_meanvar" or "patn_long_mult_meanvarcov"
+"simultaneous EWMA"   "patn_long_mult_meanvar" or "patn_long_mult_meanvarcov"
+"multivariate CUSUM"  "patn_long_mult_meanvar" or "patn_long_mult_meanvarcov"
+"multivariate EWMA"   "patn_long_mult_meanvar" or "patn_long_mult_meanvarcov"
+"decorrelation CUSUM" "patn_long_mult_meanvarcov"
+"decorrelation EWMA"  "patn_long_mult_meanvarcov"
+```
+
+### Step 3: Evaluate Performance
+
+Finally, we can evaluate the performance and visualize the results by the same functions  \code{eva_output_two}, \code{eva_output_two}, \code{plot.eva_control_chart} and \code{plot_PMROC}.
+
+```{r}
+eva_output_two<-eva_control_chart_two(
+  chart_IC_output$chart,example_long_md$ttij_IC,example_long_md$nobs_IC,
+  rep(1,nind_IC),rep(ntimepoints,nind_IC),
+  chart_OC_output$chart,example_long_md$ttij_OC,example_long_md$nobs_OC,
+  rep(1,nind_OC),rep(ntimepoints,nind_OC),
+  ttmin=1,ttmax=ntimepoints,
+  ntimepoints=ntimepoints)
+```
+
+```{r,fig.width=7}
+plot(eva_output_two)
+```
+
+```{r}
+plot_PMROC(eva_output_two)
+```
+
+## Monitor Longitudinal Data for Survival Outcomes
+
+Recently there have been some new methods that attempt to utilize the survival information in the training dataset in dynamic screening problems. These methods can be especially useful in medical and health related applications where longitudinal data are monitored to predict or improve survival outcomes. This package provides functions to implement two such methods. The first one is called "risk monitoring" (c.f., You and Qiu 2020) and the second one is about applying joint modeling to monitoring the longitudinal data. 
+
+### Preliminaries: How to Prepare Data
+
+For the longitudinal data, we still that the longitudinal measurements are taken at times $t_{i1},\ldots,t_{in_i}$ in the design interval $[0,T]$, where $n_i$ is the number of observations for the $i$th subject. The corresponding measurements at those times are denoted by $\mathbf{y}_{i1},\ldots,\mathbf{y}_{in_i}$. Each $\mathbf{y}_{ij}$ is a $p$-dimensional vector $(y_{ij1},\ldots,y_{ijp})'$. Observation times and number of observations can be similarly stored in the matrix $\mathbf{T}$ and the vector $\mathbf{N}$. Longitudinal data should be prepared in a 3 dimensional array $\mathbf{Y}$, such that the $(i,j,k)$th component of $\mathbf{Y}$ is $y_{ijk}$. 
+
+For the survival data, we assume that the $i$th subject entered the study at time $S_i$ and was lost to follow-up at time $T_i$. If a survival outcome or clinical event is observed at time $T_i$, then $\Delta_i=\texttt{True}$, and $\Delta_i=\texttt{False}$ otherwise. Entry times should be stored in a vector $(S_1,\ldots,S_m)'$, the time to lost-to-follow-up should be stored in a vector $(T_1,\ldots,T_m)'$, and the survival outcomes are stored in a vector $(\Delta_1,\ldots,\Delta_m)'$. 
+
+### Implementing the Risk Monitoring Method
+
+We will demonstrate the use of this package using a simulated dataset. First we load the dataset by running
+```{r}
+data("example_long_surv")
+```
+In this data set \code{example_long_surv$yyijk} is an 3 dimensional array of observed longitudinal measurements, \code{example_long_surv$ttij} is the matrix of observation times, \code{example_long_surv$starttime} is the times when subjects enter the study, and \code{example_long_surv$survevent} is the observed survival outcomes. Then we can apply the function \code{est_pattern_long_surv} to estimate the longitudinal pattern as well as the relationship between longitudinal and survival data.
+```{r}
+ntimepoints<-example_long_surv$ntimepoints
+nind<-dim(example_long_surv$yyijk)[1]
+pattern_risk<-est_pattern_long_surv(
+  example_long_surv$yyijk,
+  example_long_surv$ttij,
+  example_long_surv$nobs,
+  example_long_surv$starttime,
+  example_long_surv$survtime,
+  example_long_surv$survevent,
+  ttmin=1,ttmax=ntimepoints,ntimepoints=ntimepoints,
+  method="risk",smoothing="local linear",
+  hh_beta=10,hh_mean=25,hh_var=25)
+```
+Then, we can apply the proposed control charts in You and Qiu (2020) to monitoring longitudinal data.
+```{r}
+chart_risk<-mnt_long_surv(
+  example_long_surv$yyijk,
+  example_long_surv$ttij,
+  example_long_surv$nobs,
+  pattern=pattern_risk,method="risk",
+  parameter=0.2,CL=Inf)
+eva_output_risk<-eva_control_chart_one(
+  chart_risk$chart,
+  example_long_surv$ttij,
+  example_long_surv$nobs,
+  starttime=rep(1,nind),
+  endtime=rep(ntimepoints,nind),
+  event=example_long_surv$survevent,
+  ttmin=1,ttmax=ntimepoints,
+  ntimepoints=ntimepoints)
+```
+```{r,fig.width=7}
+plot(eva_output_risk)
+```
+```{r}
+plot_PMROC(eva_output_risk)
+```
+
